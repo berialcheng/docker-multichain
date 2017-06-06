@@ -17,6 +17,10 @@ RUN apt-get update \
 	&& cd /tmp \
 	&& rm -Rf multichain*
 
+RUN cd / \
+	&& pip install pycrypto \
+	&& git clone https://github.com/MultiChain/multichain-explorer.git
+
 VOLUME [ "/opt/chains" ]
 
 EXPOSE 8333 8332 18333 18332
